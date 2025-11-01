@@ -1,0 +1,56 @@
+---
+import { Icon } from 'astro-icon/components';
+import image from '@/images/image-1.jpg';
+import { Image } from 'astro:assets';
+
+interface Props {
+  title?: string;
+  className?: string;
+  hoverable?: boolean;
+}
+
+const { title, className = '', hoverable = false } = Astro.props;
+---
+
+<div class:list={['card', hoverable && 'card--hoverable', className]}>
+  {title && <h3 class="card__title">{title}</h3>}
+  <div class="card__content">
+    <slot />
+    <Icon name="local:icon-clock" />
+    <Image src={image} alt="Image" />
+  </div>
+</div>
+
+<style lang="scss">
+  @use '@/styles/global/variables' as *;
+  @use '@/styles/global/mixins' as *;
+
+  .card {
+    padding: $spacing-lg;
+    background-color: $color-background;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-sm;
+    @include transition(box-shadow, transform);
+
+    &--hoverable {
+      cursor: pointer;
+
+      @include hover {
+        box-shadow: $shadow-lg;
+        transform: translateY(-4px);
+      }
+    }
+
+    &__title {
+      margin-bottom: $spacing-md;
+      font-size: $font-size-2xl;
+      color: $color-text;
+    }
+
+    &__content {
+      color: $color-text-light;
+      line-height: $line-height-relaxed;
+    }
+  }
+</style>

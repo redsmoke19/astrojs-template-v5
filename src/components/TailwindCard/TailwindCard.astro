@@ -1,0 +1,20 @@
+---
+interface Props {
+  title?: string;
+  className?: string;
+  hoverable?: boolean;
+}
+
+const { title, className = '', hoverable = false } = Astro.props;
+
+const baseClasses = 'p-lg bg-white border border-gray-200 rounded-lg shadow-sm transition-all';
+const hoverClasses = hoverable ? 'cursor-pointer hover:shadow-lg hover:-translate-y-1' : '';
+const classes = `${baseClasses} ${hoverClasses} ${className}`;
+---
+
+<div class={classes}>
+  {title && <h3 class="mb-md text-2xl text-gray-900">{title}</h3>}
+  <div class="text-gray-600 leading-relaxed bg-primary">
+    <slot />
+  </div>
+</div>

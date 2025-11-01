@@ -1,0 +1,108 @@
+---
+import Main from '@/layouts/Main.astro';
+import Button from '@/components/Button/Button.astro';
+import Card from '@/components/Card/Card.astro';
+---
+
+<Main title="Astro Template v5">
+  <main class="container">
+    <section class="hero">
+      <h1 class="hero__title">🚀 Astro Template v5</h1>
+      <p class="hero__subtitle">
+        Современный шаблон для разработки с поддержкой TypeScript, SCSS и всех необходимых инструментов
+      </p>
+      <div class="hero__buttons">
+        <Button variant="primary" size="lg">Начать работу</Button>
+        <Button variant="outline" size="lg">Документация</Button>
+        <a href="/tailwind-demo">
+          <Button variant="secondary" size="lg">Tailwind Demo</Button>
+        </a>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2 class="features__title">Возможности шаблона</h2>
+      <div class="features__grid">
+        <Card title="⚡ TypeScript" hoverable>
+          Полная поддержка TypeScript 5.x с строгой типизацией и алиасами путей
+        </Card>
+        <Card title="🎨 SCSS" hoverable> Препроцессор SCSS с переменными, миксинами и глобальными импортами </Card>
+        <Card title="🔍 Линтеры" hoverable>
+          Настроенные ESLint, Prettier и Stylelint для поддержания качества кода
+        </Card>
+        <Card title="🧩 Компоненты" hoverable>
+          Генератор компонентов для быстрого создания новых элементов интерфейса
+        </Card>
+        <Card title="📦 Swiper" hoverable> Интегрированная библиотека Swiper для создания слайдеров и каруселей </Card>
+        <Card title="🎯 Иконки" hoverable>
+          Поддержка @astrojs/icon для работы с SVG иконками из популярных наборов
+        </Card>
+      </div>
+    </section>
+  </main>
+</Main>
+
+<style lang="scss">
+  @use '@/styles/global/variables' as *;
+  @use '@/styles/global/mixins' as *;
+
+  main {
+    padding: $spacing-2xl 0;
+  }
+
+  .hero {
+    text-align: center;
+    padding: $spacing-3xl 0;
+
+    &__title {
+      font-size: $font-size-4xl;
+      margin-bottom: $spacing-md;
+      background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+      @include media-md {
+        font-size: 48px;
+      }
+    }
+
+    &__subtitle {
+      font-size: $font-size-xl;
+      color: $color-text-light;
+      max-width: 600px;
+      margin: 0 auto $spacing-xl;
+      line-height: $line-height-relaxed;
+    }
+
+    &__buttons {
+      @include flex-center;
+      gap: $spacing-md;
+      flex-wrap: wrap;
+    }
+  }
+
+  .features {
+    padding: $spacing-3xl 0;
+
+    &__title {
+      text-align: center;
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-2xl;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+
+      @include media-md {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include media-lg {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+</style>

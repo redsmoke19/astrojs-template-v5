@@ -1,0 +1,144 @@
+---
+import Main from '@/layouts/Main.astro';
+import TailwindButton from '@/components/TailwindButton/TailwindButton.astro';
+import TailwindCard from '@/components/TailwindCard/TailwindCard.astro';
+---
+
+<Main title="Tailwind CSS v4 Demo">
+  <main class="container mx-auto px-md md:px-lg py-2xl">
+    <section class="text-center py-3xl">
+      <h1
+        class="text-4xl md:text-5xl font-bold mb-md bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+      >
+        🎨 Tailwind CSS v4
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-xl leading-relaxed">
+        Демонстрация возможностей Tailwind CSS v4 в проекте Astro v5
+      </p>
+      <div class="flex items-center justify-center gap-md flex-wrap">
+        <TailwindButton variant="primary" size="lg">Начать работу</TailwindButton>
+        <TailwindButton variant="outline" size="lg">Документация</TailwindButton>
+      </div>
+    </section>
+
+    <section class="py-3xl">
+      <h2 class="text-3xl font-bold text-center mb-2xl">Компоненты с Tailwind</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+        <TailwindCard title="⚡ Быстрая разработка" hoverable>
+          Утилитарные классы Tailwind позволяют быстро создавать интерфейсы без написания кастомного
+          CSS
+        </TailwindCard>
+        <TailwindCard title="🎨 Кастомизация" hoverable>
+          Легко настраиваемая система дизайна через tailwind.config.js с поддержкой ваших цветов и
+          стилей
+        </TailwindCard>
+        <TailwindCard title="📱 Адаптивность" hoverable>
+          Встроенные брейкпоинты и модификаторы для создания отзывчивых дизайнов
+        </TailwindCard>
+        <TailwindCard title="🔧 v4 Новинки" hoverable>
+          Новый движок на основе Lightning CSS, улучшенная производительность и новые возможности
+        </TailwindCard>
+        <TailwindCard title="🤝 Совместимость" hoverable>
+          Отлично работает вместе с SCSS и другими инструментами стилизации
+        </TailwindCard>
+        <TailwindCard title="⚙️ Vite плагин" hoverable>
+          Нативная интеграция с Vite через @tailwindcss/vite для максимальной производительности
+        </TailwindCard>
+      </div>
+    </section>
+
+    <section class="py-3xl">
+      <h2 class="text-3xl font-bold text-center mb-2xl">Примеры кнопок</h2>
+      <div class="flex flex-wrap gap-md justify-center items-center">
+        <TailwindButton variant="primary" size="sm">Small Primary</TailwindButton>
+        <TailwindButton variant="primary" size="md">Medium Primary</TailwindButton>
+        <TailwindButton variant="primary" size="lg">Large Primary</TailwindButton>
+      </div>
+      <div class="flex flex-wrap gap-md justify-center items-center mt-md">
+        <TailwindButton variant="secondary" size="sm">Small Secondary</TailwindButton>
+        <TailwindButton variant="secondary" size="md">Medium Secondary</TailwindButton>
+        <TailwindButton variant="secondary" size="lg">Large Secondary</TailwindButton>
+      </div>
+      <div class="flex flex-wrap gap-md justify-center items-center mt-md">
+        <TailwindButton variant="outline" size="sm">Small Outline</TailwindButton>
+        <TailwindButton variant="outline" size="md">Medium Outline</TailwindButton>
+        <TailwindButton variant="outline" size="lg">Large Outline</TailwindButton>
+      </div>
+      <div class="flex flex-wrap gap-md justify-center items-center mt-md">
+        <TailwindButton variant="primary" disabled>Disabled Button</TailwindButton>
+      </div>
+    </section>
+
+    <section class="py-3xl">
+      <h2 class="text-3xl font-bold text-center mb-2xl">Утилитарные классы</h2>
+      <TailwindCard>
+        <div class="space-y-4">
+          <div class="p-4 bg-primary text-white rounded-md">
+            <code>bg-primary text-white rounded-md</code>
+          </div>
+          <div class="p-4 bg-secondary text-white rounded-lg">
+            <code>bg-secondary text-white rounded-lg</code>
+          </div>
+          <div class="p-4 bg-accent text-white rounded-xl">
+            <code>bg-accent text-white rounded-xl</code>
+          </div>
+          <div class="p-4 border-2 border-primary text-primary rounded-md">
+            <code>border-2 border-primary text-primary</code>
+          </div>
+          <div class="p-4 shadow-lg bg-white rounded-md">
+            <code>shadow-lg bg-white rounded-md</code>
+          </div>
+        </div>
+      </TailwindCard>
+    </section>
+
+    <section class="py-3xl">
+      <h2 class="text-3xl font-bold text-center mb-2xl">Адаптивный дизайн</h2>
+      <TailwindCard>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center"
+        >
+          <div class="p-4 bg-primary text-white rounded-md">
+            <div class="font-bold">xs</div>
+            <div class="text-sm">Default</div>
+          </div>
+          <div class="p-4 bg-secondary text-white rounded-md">
+            <div class="font-bold">sm</div>
+            <div class="text-sm">≥640px</div>
+          </div>
+          <div class="p-4 bg-accent text-white rounded-md">
+            <div class="font-bold">md</div>
+            <div class="text-sm">≥768px</div>
+          </div>
+          <div class="p-4 bg-primary text-white rounded-md">
+            <div class="font-bold">lg</div>
+            <div class="text-sm">≥1024px</div>
+          </div>
+        </div>
+        <p class="mt-4 text-center text-gray-600">
+          Измените размер окна браузера, чтобы увидеть адаптивную сетку в действии
+        </p>
+      </TailwindCard>
+    </section>
+
+    <section class="py-3xl text-center">
+      <h2 class="text-3xl font-bold mb-md">Готовы начать?</h2>
+      <p class="text-gray-600 mb-xl max-w-2xl mx-auto">
+        Используйте Tailwind CSS v4 вместе с SCSS для максимальной гибкости в разработке
+      </p>
+      <div class="flex gap-md justify-center">
+        <TailwindButton variant="primary" size="lg">
+          <a href="/" class="no-underline text-white">← Вернуться на главную</a>
+        </TailwindButton>
+        <TailwindButton variant="outline" size="lg">
+          <a
+            href="https://tailwindcss.com/docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="no-underline">Документация Tailwind</a
+          >
+        </TailwindButton>
+      </div>
+    </section>
+  </main>
+</Main>
