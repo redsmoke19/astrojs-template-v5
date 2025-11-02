@@ -18,6 +18,7 @@ scripts/
 ### Создание нового модуля
 
 1. Создайте файл в папке `modules/` с префиксом `init-`:
+
    ```typescript
    // modules/init-my-feature.ts
    export function initMyFeature(): void {
@@ -26,17 +27,19 @@ scripts/
    ```
 
 2. Импортируйте и вызовите в `index.ts`:
+
    ```typescript
-   import { initMyFeature } from './modules/init-my-feature';
-   
+   import { initMyFeature } from './modules/init-my-feature'
+
    function initScripts(): void {
-     initMyFeature();
+     initMyFeature()
    }
    ```
 
 ### Создание утилитарной функции
 
 Создайте файл в папке `utils/`:
+
 ```typescript
 // utils/my-util.ts
 export function myUtil(param: string): void {
@@ -45,8 +48,9 @@ export function myUtil(param: string): void {
 ```
 
 Используйте в модулях:
+
 ```typescript
-import { myUtil } from '../utils/my-util';
+import { myUtil } from '../utils/my-util'
 ```
 
 ## Примеры
@@ -54,6 +58,7 @@ import { myUtil } from '../utils/my-util';
 ### Console Logger (init-console-logger.ts)
 
 Демонстрационный модуль, который:
+
 - Выводит приветственное сообщение
 - Логирует информацию о странице
 - Отслеживает время загрузки
@@ -63,6 +68,7 @@ import { myUtil } from '../utils/my-util';
 ### Logger Utils (logger.ts)
 
 Утилитарные функции для красивого логирования:
+
 - `log()` - базовое логирование с кастомизацией
 - `logInfo()` - информационные сообщения
 - `logSuccess()` - сообщения об успехе
@@ -72,6 +78,7 @@ import { myUtil } from '../utils/my-util';
 ### DOM Utils (dom.ts)
 
 Утилитарные функции для работы с DOM:
+
 - `qs()` - безопасный querySelector с типизацией
 - `qsa()` - безопасный querySelectorAll с типизацией
 - `isInViewport()` - проверка видимости элемента
@@ -86,6 +93,7 @@ import { myUtil } from '../utils/my-util';
 ## Подключение
 
 Скрипты автоматически подключаются через `Main.astro`:
+
 ```astro
 <script src="@/scripts/index.ts"></script>
 ```
@@ -100,4 +108,3 @@ Astro автоматически обрабатывает TypeScript и банд
 4. **TypeScript**: Используйте типизацию для всех функций
 5. **Проверки**: Проверяйте доступность `window` и DOM перед использованием
 6. **Производительность**: Используйте debounce/throttle для событий
-

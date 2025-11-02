@@ -1,9 +1,9 @@
-import { defineConfig } from 'astro/config';
-import viteSassGlob from 'vite-plugin-sass-glob-import';
-import { fileURLToPath } from 'node:url';
-import icon from 'astro-icon';
+import { defineConfig } from 'astro/config'
+import viteSassGlob from 'vite-plugin-sass-glob-import'
+import { fileURLToPath } from 'node:url'
+import icon from 'astro-icon'
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +18,7 @@ export default defineConfig({
   },
   integrations: [
     icon({
+      iconDir: 'src/assets/icons',
       include: {
         // Указываем локальную коллекцию
         local: ['*']
@@ -38,7 +39,10 @@ export default defineConfig({
       preprocessorOptions: {
         scss: {
           api: 'modern-compiler',
-          additionalData: `@use "@/styles/global/variables" as *;`
+          additionalData: `
+            @use "@/assets/styles/global/variables" as *;
+            @use "@/assets/styles/global/mixins" as *;
+          `
         }
       }
     },
@@ -51,10 +55,10 @@ export default defineConfig({
           assetFileNames: (assetInfo) => {
             return assetInfo.name === 'style.css'
               ? `${assetInfo.name}` // задается имя и папка (корень) для css
-              : `assets/[name][extname]`; // задается имя и папка для всех остальных ресурсов
+              : `assets/[name][extname]` // задается имя и папка для всех остальных ресурсов
           }
         }
       }
     }
   }
-});
+})

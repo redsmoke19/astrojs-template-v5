@@ -10,7 +10,7 @@
  */
 
 // Импорт модулей
-import { initConsoleLogger } from './modules/init-console-logger';
+import { initConsoleLogger } from './modules/init-console-logger'
 // import { initSmoothScroll } from './modules/init-smooth-scroll';
 
 /**
@@ -19,11 +19,11 @@ import { initConsoleLogger } from './modules/init-console-logger';
 function initScripts(): void {
   // Проверяем, что мы в браузере
   if (typeof window === 'undefined') {
-    return;
+    return
   }
 
   // Инициализируем модули
-  initConsoleLogger();
+  initConsoleLogger()
   // initSmoothScroll(); // Раскомментируйте для активации плавной прокрутки
 
   // Здесь можно добавить инициализацию других модулей:
@@ -33,12 +33,11 @@ function initScripts(): void {
 
 // Запускаем инициализацию при загрузке DOM
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initScripts);
+  document.addEventListener('DOMContentLoaded', initScripts)
 } else {
   // DOM уже загружен
-  initScripts();
+  initScripts()
 }
 
 // Экспортируем для возможного использования извне
-export { initScripts };
-
+export { initScripts }

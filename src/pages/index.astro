@@ -1,7 +1,7 @@
 ---
+import Button from '@/components/Button/Button.astro'
+import Card from '@/components/Card/Card.astro'
 import Main from '@/layouts/Main.astro';
-import Button from '@/components/Button/Button.astro';
-import Card from '@/components/Card/Card.astro';
 ---
 
 <Main title="Astro Template v5">
@@ -43,9 +43,6 @@ import Card from '@/components/Card/Card.astro';
 </Main>
 
 <style lang="scss">
-  @use '@/styles/global/variables' as *;
-  @use '@/styles/global/mixins' as *;
-
   main {
     padding: $spacing-2xl 0;
   }
@@ -62,7 +59,7 @@ import Card from '@/components/Card/Card.astro';
       -webkit-text-fill-color: transparent;
       background-clip: text;
 
-      @include media-md {
+      @include tablet-desktop {
         font-size: 48px;
       }
     }
@@ -96,11 +93,11 @@ import Card from '@/components/Card/Card.astro';
       grid-template-columns: 1fr;
       gap: $spacing-lg;
 
-      @include media-md {
+      @include tablet {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      @include media-lg {
+      @include desktop {
         grid-template-columns: repeat(3, 1fr);
       }
     }

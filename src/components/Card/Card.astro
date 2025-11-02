@@ -1,7 +1,8 @@
 ---
-import { Icon } from 'astro-icon/components';
-import image from '@/images/image-1.jpg';
-import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+
+import image from '@/assets/images/image-1.jpg'
 
 interface Props {
   title?: string;
@@ -22,8 +23,8 @@ const { title, className = '', hoverable = false } = Astro.props;
 </div>
 
 <style lang="scss">
-  @use '@/styles/global/variables' as *;
-  @use '@/styles/global/mixins' as *;
+  @use '@/assets/styles/global/variables' as *;
+  @use '@/assets/styles/global/mixins' as *;
 
   .card {
     padding: $spacing-lg;

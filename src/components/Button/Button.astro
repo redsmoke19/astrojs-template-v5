@@ -12,7 +12,7 @@ const {
   size = 'md',
   className = '',
   type = 'button',
-  disabled = false,
+  disabled = false
 } = Astro.props;
 ---
 
@@ -25,8 +25,8 @@ const {
 </button>
 
 <style lang="scss">
-  @use '@/styles/global/variables' as *;
-  @use '@/styles/global/mixins' as *;
+  @use '@/assets/styles/global/variables' as *;
+  @use '@/assets/styles/global/mixins' as *;
 
   .button {
     display: inline-flex;

@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+@utility container {
+  max-width: 134.8rem;
+  margin-inline: auto;
+}
+
+:root {
+  --spacing: 0.4rem;
+  --radius: 0.4rem;
+  --text-xs: 1.2rem;
+  --text-xs--line-height: 2rem;
+  --text-sm: 1.4rem;
+  --text-sm--line-height: 160%;
+  --text-base: 1.6rem;
+  --text-base--line-height: 160%;
+  --text-lg: 2rem;
+  --text-lg--line-height: 160%;
+  --text-xl: 2.4rem;
+  --text-xl--line-height: 160%;
+  --text-2xl: 3.2rem;
+  --text-2xl--line-height: 160%;
+  --text-3xl: 4rem;
+  --text-3xl--line-height: 160%;
+  --text-4xl: 4.8rem;
+  --text-4xl--line-height: 160%;
+  --text-5xl: 5.6rem;
+  --text-5xl--line-height: 160%;
+}

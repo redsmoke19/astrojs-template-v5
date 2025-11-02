@@ -158,7 +158,7 @@ theme: {
 
 ```scss
 // Использование в компоненте
-@use '@/styles/global/variables' as *;
+@use '@/assets/styles/global/variables' as *;
 
 .my-component {
   color: $color-primary;
@@ -171,7 +171,7 @@ theme: {
 Миксины находятся в `src/styles/_mixins.scss`:
 
 ```scss
-@use '@/styles/global/mixins' as *;
+@use '@/assets/styles/global/mixins' as *;
 
 .my-component {
   @include flex-center;
@@ -187,7 +187,7 @@ theme: {
 
 ```astro
 ---
-import '@/styles/global.scss';
+import '@/assets/styles/global.scss';
 ---
 ```
 
@@ -199,10 +199,10 @@ import '@/styles/global.scss';
 
 ```typescript
 // Вместо относительных путей
-import Main from '../../../layouts/Main.astro';
+import Main from '../../../layouts/Main.astro'
 
 // Используйте алиасы
-import Main from '@/layouts/Main.astro';
+import Main from '@/layouts/Main.astro'
 ```
 
 ### Autoprefixer
@@ -235,17 +235,17 @@ src/scripts/
 ```typescript
 // src/scripts/modules/init-my-feature.ts
 export function initMyFeature(): void {
-  console.log('My feature initialized!');
+  console.log('My feature initialized!')
 }
 ```
 
 2. Импортируйте и вызовите в `src/scripts/index.ts`:
 
 ```typescript
-import { initMyFeature } from './modules/init-my-feature';
+import { initMyFeature } from './modules/init-my-feature'
 
 function initScripts(): void {
-  initMyFeature();
+  initMyFeature()
   // другие модули...
 }
 ```
@@ -264,7 +264,7 @@ export function myUtil(param: string): void {
 Используйте в модулях:
 
 ```typescript
-import { myUtil } from '../utils/my-util';
+import { myUtil } from '../utils/my-util'
 ```
 
 ### Подключение
@@ -325,8 +325,8 @@ const { title } = Astro.props;
 </div>
 
 <style lang="scss">
-  @use '@/styles/global/variables' as *;
-  @use '@/styles/global/mixins' as *;
+  @use '@/assets/styles/global/variables' as *;
+  @use '@/assets/styles/global/mixins' as *;
 
   .my-component {
     padding: $spacing-lg;
