@@ -6,7 +6,7 @@ module.exports = {
     'scss/at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['utility']
+        ignoreAtRules: ['utility', 'theme']
       }
     ],
     'no-descending-specificity': null,

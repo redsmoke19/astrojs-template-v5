@@ -1,0 +1,38 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types'
+import type { HTMLAttributes } from "astro/types"
+
+import type { ButtonVariants } from '.'
+import { buttonVariants } from '.'
+
+import { cn } from '@/shared/utils/class-name'
+
+type Props<Tag extends HTMLTag> = HTMLAttributes<"a"> & HTMLAttributes<"button"> & Polymorphic<
+  { as: 'a' | 'button' | 'div' } & {
+  className?: string;
+  variant?: ButtonVariants['variant']
+  size?: ButtonVariants['size']
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
+}
+>;
+
+const {
+  variant = 'default',
+  size = 'default',
+  as: Tag = 'button',
+  className = '',
+  type = 'button',
+  disabled = false,
+  ...props
+} = Astro.props as Props<HTMLTag>;
+---
+
+<Tag
+  class:list={cn(buttonVariants({ variant, size }), className)}
+  :as="as"
+  {...props}
+>
+  <slot />
+</Tag>
+

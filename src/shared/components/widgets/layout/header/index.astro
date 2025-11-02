@@ -1,0 +1,66 @@
+---
+interface Props {
+  mod?: string
+}
+
+const { mod = '' } = Astro.props
+---
+
+<header class={`sticky top-0 z-[1020] bg-white border-b border-gray-200 py-4 ${mod}`}>
+  <div class="container">
+    <div class="flex items-center justify-between gap-8">
+      <a
+        href="#"
+        class="text-xl font-bold text-gray-900 no-underline transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+      >
+        <span>Logo</span>
+      </a>
+
+      <nav class="hidden md:block">
+        <ul class="flex items-center gap-8 list-none m-0 p-0">
+          <li class="list-none">
+            <a
+              href="#"
+              class="text-base font-medium text-gray-900 no-underline py-sm px-md rounded-md transition-colors hover:bg-gray-50 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+            >
+              Главная
+            </a>
+          </li>
+          <li class="list-none">
+            <a
+              href="#"
+              class="text-base font-medium text-gray-900 no-underline py-sm px-md rounded-md transition-colors hover:bg-gray-50 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+            >
+              О нас
+            </a>
+          </li>
+          <li class="list-none">
+            <a
+              href="#"
+              class="text-base font-medium text-gray-900 no-underline py-sm px-md rounded-md transition-colors hover:bg-gray-50 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+            >
+              Услуги
+            </a>
+          </li>
+          <li class="list-none">
+            <a
+              href="#"
+              class="text-base font-medium text-gray-900 no-underline py-sm px-md rounded-md transition-colors hover:bg-gray-50 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+            >
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button
+        class="flex md:hidden flex-col gap-1 p-2 w-8 h-8 bg-transparent border-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+        aria-label="Открыть меню"
+      >
+        <span class="w-full h-0.5 bg-gray-900 rounded-sm transition-all"></span>
+        <span class="w-full h-0.5 bg-gray-900 rounded-sm transition-all"></span>
+        <span class="w-full h-0.5 bg-gray-900 rounded-sm transition-all"></span>
+      </button>
+    </div>
+  </div>
+</header>

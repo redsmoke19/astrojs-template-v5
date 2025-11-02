@@ -1,6 +1,6 @@
 ---
-import Button from '@/components/Button/Button.astro'
-import Card from '@/components/Card/Card.astro'
+import { UiButton, Card } from '@uikit/components'
+
 import Main from '@/layouts/Main.astro';
 ---
 
@@ -12,11 +12,9 @@ import Main from '@/layouts/Main.astro';
         Современный шаблон для разработки с поддержкой TypeScript, SCSS и всех необходимых инструментов
       </p>
       <div class="hero__buttons">
-        <Button variant="primary" size="lg">Начать работу</Button>
-        <Button variant="outline" size="lg">Документация</Button>
-        <a href="/tailwind-demo">
-          <Button variant="secondary" size="lg">Tailwind Demo</Button>
-        </a>
+        <UiButton variant="default" size="lg">Начать работу</UiButton>
+        <UiButton variant="outline" size="lg">Документация</UiButton>
+        <UiButton as="a" variant="secondary" size="lg" href="https://tailwindcss.com/" target="_blank">Tailwind</UiButton>
       </div>
     </section>
 

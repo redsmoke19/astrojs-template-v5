@@ -9,19 +9,23 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint:js": "eslint \"src/**/*.{js,ts,jsx,tsx,astro}\"",
+    "lint:js:fix": "eslint \"src/**/*.{js,ts,jsx,tsx,astro}\" --fix",
     "lint:style": "stylelint \"./**/*.{css,scss}\" --ignore-path .gitignore",
     "lint:style:fix": "stylelint \"./**/*.{css,scss}\" --ignore-path .gitignore --fix",
     "lint:prettier": "prettier --check .",
     "lint:prettier:fix": "prettier --write --list-different .",
     "lint": "npm run lint:prettier && npm run lint:js && npm run lint:style",
-    "lint:fix": "npm run lint:prettier:fix && npm run lint:js --fix && npm run lint:style:fix",
+    "lint:fix": "npm run lint:prettier:fix && npm run lint:js:fix && npm run lint:style:fix",
     "gen:component": "node ./util/component/gen-component.js"
   },
   "dependencies": {
     "astro": "^5.15.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "pathe": "^1.1.2",
     "scroll-lock": "^2.1.5",
     "swiper": "^11.1.15",
+    "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
