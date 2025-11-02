@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+@function size-html($viewport, $koeff: 1) {
+  // viewport - переменная вьюпорта макета ($vp-1440 и тд.).
+  // koeff - коэффицент скейлинга.
+  @return calc($fz-html / $viewport) * 100vw * $koeff;
+}
+
+@function size($size-in-px) {
+  @return calc($size-in-px / $fz-html) * 1rem;
+}

@@ -4,17 +4,16 @@ $color-secondary: #06b6d4;
 $color-accent: #f59e0b;
 $color-text: #1f2937;
 $color-text-light: #6b7280;
-$color-background: #ffffff;
+$color-background: #fff;
 $color-background-alt: #f9fafb;
 $color-border: #e5e7eb;
 
 // Типографика
 // $font-family-base: -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
 //   "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$font-family-base: "Geologica", sans-serif;
+$font-family-base: 'Geologica', sans-serif;
 $font-family-heading: $font-family-base;
-$font-family-mono: "Fira Code", "Courier New", monospace;
-
+$font-family-mono: 'Fira Code', 'Courier New', monospace;
 $font-size-base: 16px;
 $font-size-sm: 14px;
 $font-size-lg: 18px;
@@ -22,12 +21,10 @@ $font-size-xl: 20px;
 $font-size-2xl: 24px;
 $font-size-3xl: 30px;
 $font-size-4xl: 36px;
-
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
-
 $line-height-base: 1.5;
 $line-height-tight: 1.25;
 $line-height-relaxed: 1.75;
@@ -49,10 +46,16 @@ $border-radius-xl: 16px;
 $border-radius-full: 9999px;
 
 // Тени
-$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+$shadow-sm: 0 1px 2px 0 rgb(0, 0, 0, 5%);
+$shadow-md:
+  0 4px 6px -1px rgb(0, 0, 0, 10%),
+  0 2px 4px -2px rgb(0, 0, 0, 10%);
+$shadow-lg:
+  0 10px 15px -3px rgb(0, 0, 0, 10%),
+  0 4px 6px -4px rgb(0, 0, 0, 10%);
+$shadow-xl:
+  0 20px 25px -5px rgb(0, 0, 0, 10%),
+  0 8px 10px -6px rgb(0, 0, 0, 10%);
 
 // Переходы
 $transition-fast: 150ms ease-in-out;
@@ -74,3 +77,9 @@ $z-index-modal-backdrop: 1040;
 $z-index-modal: 1050;
 $z-index-popover: 1060;
 $z-index-tooltip: 1070;
+$fz-html: 10px;
+$fz-default: 1.4rem;
+$vp-1920: 1920px;
+$vp-1024: 1024px;
+$vp-768: 768px;
+$vp-375: 375px;

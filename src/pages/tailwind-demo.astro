@@ -1,12 +1,13 @@
 ---
+import TailwindButton from '@/components/TailwindButton/TailwindButton.astro'
+import TailwindCard from '@/components/TailwindCard/TailwindCard.astro'
 import Main from '@/layouts/Main.astro';
-import TailwindButton from '@/components/TailwindButton/TailwindButton.astro';
-import TailwindCard from '@/components/TailwindCard/TailwindCard.astro';
 ---
 
 <Main title="Tailwind CSS v4 Demo">
-  <main class="container mx-auto px-md md:px-lg py-2xl">
-    <section class="text-center py-3xl">
+  <main class=" mx-auto px-md md:px-lg py-2xl">
+    <section class="text-center py-3">
+      <div class="container">
       <h1
         class="text-4xl md:text-5xl font-bold mb-md bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
       >
@@ -19,11 +20,13 @@ import TailwindCard from '@/components/TailwindCard/TailwindCard.astro';
         <TailwindButton variant="primary" size="lg">Начать работу</TailwindButton>
         <TailwindButton variant="outline" size="lg">Документация</TailwindButton>
       </div>
+      </div>
     </section>
 
-    <section class="py-3xl">
+    <section class="py-3">
+      <div class="container">
       <h2 class="text-3xl font-bold text-center mb-2xl">Компоненты с Tailwind</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg gap-2">
         <TailwindCard title="⚡ Быстрая разработка" hoverable>
           Утилитарные классы Tailwind позволяют быстро создавать интерфейсы без написания кастомного
           CSS
@@ -45,9 +48,11 @@ import TailwindCard from '@/components/TailwindCard/TailwindCard.astro';
           Нативная интеграция с Vite через @tailwindcss/vite для максимальной производительности
         </TailwindCard>
       </div>
+      </div>
     </section>
 
-    <section class="py-3xl">
+    <section class="py-3">
+      <div class="container">
       <h2 class="text-3xl font-bold text-center mb-2xl">Примеры кнопок</h2>
       <div class="flex flex-wrap gap-md justify-center items-center">
         <TailwindButton variant="primary" size="sm">Small Primary</TailwindButton>
@@ -67,9 +72,11 @@ import TailwindCard from '@/components/TailwindCard/TailwindCard.astro';
       <div class="flex flex-wrap gap-md justify-center items-center mt-md">
         <TailwindButton variant="primary" disabled>Disabled Button</TailwindButton>
       </div>
+      </div>
     </section>
 
-    <section class="py-3xl">
+    <section class="py-3">
+      <div class="container">
       <h2 class="text-3xl font-bold text-center mb-2xl">Утилитарные классы</h2>
       <TailwindCard>
         <div class="space-y-4">
@@ -90,9 +97,11 @@ import TailwindCard from '@/components/TailwindCard/TailwindCard.astro';
           </div>
         </div>
       </TailwindCard>
+      </div>
     </section>
 
-    <section class="py-3xl">
+    <section class="py-3">
+      <div class="container">
       <h2 class="text-3xl font-bold text-center mb-2xl">Адаптивный дизайн</h2>
       <TailwindCard>
         <div
@@ -119,9 +128,11 @@ import TailwindCard from '@/components/TailwindCard/TailwindCard.astro';
           Измените размер окна браузера, чтобы увидеть адаптивную сетку в действии
         </p>
       </TailwindCard>
+      </div>
     </section>
 
-    <section class="py-3xl text-center">
+    <section class="py-3 text-center">
+      <div class="container">
       <h2 class="text-3xl font-bold mb-md">Готовы начать?</h2>
       <p class="text-gray-600 mb-xl max-w-2xl mx-auto">
         Используйте Tailwind CSS v4 вместе с SCSS для максимальной гибкости в разработке
@@ -138,6 +149,7 @@ import TailwindCard from '@/components/TailwindCard/TailwindCard.astro';
             class="no-underline">Документация Tailwind</a
           >
         </TailwindButton>
+      </div>
       </div>
     </section>
   </main>

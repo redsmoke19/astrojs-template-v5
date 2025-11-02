@@ -1,0 +1,61 @@
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-from-tablet {
+  @include tablet-desktop {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+.hidden-desktop-only {
+  @include desktop {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+.hidden-tablet-only {
+  @include tablet {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+.hidden-mobile-only {
+  @include mobile {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+.hidden-mobile-tablet {
+  @include mobile-tablet {
+    display: none !important;
+  }
+}
+
+[data-leaf] {
+  position: absolute;
+  display: block;
+  opacity: 0;
+
+  &.animation-complete {
+    opacity: 1;
+  }
+}
+
+.no-data {
+  margin: 0;
+  color: rgba($color-pine-tree, 60%);
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 130%;
+
+  strong {
+    color: $color-tangaroa;
+    font-weight: 300;
+  }
+}

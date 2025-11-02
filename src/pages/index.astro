@@ -1,7 +1,7 @@
 ---
+import { UiButton, Card } from '@uikit/components'
+
 import Main from '@/layouts/Main.astro';
-import Button from '@/components/Button/Button.astro';
-import Card from '@/components/Card/Card.astro';
 ---
 
 <Main title="Astro Template v5">
@@ -12,11 +12,9 @@ import Card from '@/components/Card/Card.astro';
         Современный шаблон для разработки с поддержкой TypeScript, SCSS и всех необходимых инструментов
       </p>
       <div class="hero__buttons">
-        <Button variant="primary" size="lg">Начать работу</Button>
-        <Button variant="outline" size="lg">Документация</Button>
-        <a href="/tailwind-demo">
-          <Button variant="secondary" size="lg">Tailwind Demo</Button>
-        </a>
+        <UiButton variant="default" size="lg">Начать работу</UiButton>
+        <UiButton variant="outline" size="lg">Документация</UiButton>
+        <UiButton as="a" variant="secondary" size="lg" href="https://tailwindcss.com/" target="_blank">Tailwind</UiButton>
       </div>
     </section>
 
@@ -43,9 +41,6 @@ import Card from '@/components/Card/Card.astro';
 </Main>
 
 <style lang="scss">
-  @use '@/styles/global/variables' as *;
-  @use '@/styles/global/mixins' as *;
-
   main {
     padding: $spacing-2xl 0;
   }
@@ -62,7 +57,7 @@ import Card from '@/components/Card/Card.astro';
       -webkit-text-fill-color: transparent;
       background-clip: text;
 
-      @include media-md {
+      @include tablet-desktop {
         font-size: 48px;
       }
     }
@@ -96,11 +91,11 @@ import Card from '@/components/Card/Card.astro';
       grid-template-columns: 1fr;
       gap: $spacing-lg;
 
-      @include media-md {
+      @include tablet {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      @include media-lg {
+      @include desktop {
         grid-template-columns: repeat(3, 1fr);
       }
     }

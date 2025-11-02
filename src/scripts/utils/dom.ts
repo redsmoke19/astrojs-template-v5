@@ -6,7 +6,7 @@
  * Безопасный querySelector с типизацией
  */
 export function qs<T extends Element = Element>(selector: string, parent: Document | Element = document): T | null {
-  return parent.querySelector<T>(selector);
+  return parent.querySelector<T>(selector)
 }
 
 /**
@@ -14,22 +14,22 @@ export function qs<T extends Element = Element>(selector: string, parent: Docume
  */
 export function qsa<T extends Element = Element>(
   selector: string,
-  parent: Document | Element = document,
+  parent: Document | Element = document
 ): NodeListOf<T> {
-  return parent.querySelectorAll<T>(selector);
+  return parent.querySelectorAll<T>(selector)
 }
 
 /**
  * Проверяет, виден ли элемент в viewport
  */
 export function isInViewport(element: Element): boolean {
-  const rect = element.getBoundingClientRect();
+  const rect = element.getBoundingClientRect()
   return (
     rect.top >= 0 &&
     rect.left >= 0 &&
     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+  )
 }
 
 /**
@@ -38,11 +38,11 @@ export function isInViewport(element: Element): boolean {
 export function waitForDOMReady(): Promise<void> {
   return new Promise((resolve) => {
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => resolve(), { once: true });
+      document.addEventListener('DOMContentLoaded', () => resolve(), { once: true })
     } else {
-      resolve();
+      resolve()
     }
-  });
+  })
 }
 
 /**
@@ -50,19 +50,19 @@ export function waitForDOMReady(): Promise<void> {
  */
 export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
-  wait: number,
+  wait: number
 ): (...args: Parameters<T>) => void {
-  let timeout: number | undefined;
+  let timeout: number | undefined
 
   return function executedFunction(...args: Parameters<T>) {
     const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
+      clearTimeout(timeout)
+      func(...args)
+    }
 
-    clearTimeout(timeout);
-    timeout = window.setTimeout(later, wait);
-  };
+    clearTimeout(timeout)
+    timeout = window.setTimeout(later, wait)
+  }
 }
 
 /**
@@ -70,18 +70,17 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
  */
 export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
-  limit: number,
+  limit: number
 ): (...args: Parameters<T>) => void {
-  let inThrottle: boolean;
+  let inThrottle: boolean
 
   return function executedFunction(...args: Parameters<T>) {
     if (!inThrottle) {
-      func(...args);
-      inThrottle = true;
+      func(...args)
+      inThrottle = true
       setTimeout(() => {
-        inThrottle = false;
-      }, limit);
+        inThrottle = false
+      }, limit)
     }
-  };
+  }
 }
-

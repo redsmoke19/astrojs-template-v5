@@ -5,16 +5,16 @@
 /* eslint-disable no-console */
 
 export interface LoggerOptions {
-  prefix?: string;
-  color?: string;
-  emoji?: string;
+  prefix?: string
+  color?: string
+  emoji?: string
 }
 
 /**
  * Логирует сообщение в консоль с форматированием
  */
 export function log(message: string, options: LoggerOptions = {}): void {
-  const { prefix = '🚀', color = '#4f46e5', emoji = '' } = options;
+  const { prefix = '🚀', color = '#4f46e5', emoji = '' } = options
 
   const style = `
     color: ${color};
@@ -23,9 +23,9 @@ export function log(message: string, options: LoggerOptions = {}): void {
     padding: 4px 8px;
     border-radius: 4px;
     background: ${color}15;
-  `;
+  `
 
-  console.log(`%c${prefix} ${emoji} ${message}`, style);
+  console.log(`%c${prefix} ${emoji} ${message}`, style)
 }
 
 /**
@@ -35,8 +35,8 @@ export function logInfo(message: string): void {
   log(message, {
     prefix: 'ℹ️',
     color: '#06b6d4',
-    emoji: 'INFO',
-  });
+    emoji: 'INFO'
+  })
 }
 
 /**
@@ -46,8 +46,8 @@ export function logSuccess(message: string): void {
   log(message, {
     prefix: '✅',
     color: '#10b981',
-    emoji: 'SUCCESS',
-  });
+    emoji: 'SUCCESS'
+  })
 }
 
 /**
@@ -57,8 +57,8 @@ export function logWarning(message: string): void {
   log(message, {
     prefix: '⚠️',
     color: '#f59e0b',
-    emoji: 'WARNING',
-  });
+    emoji: 'WARNING'
+  })
 }
 
 /**
@@ -68,7 +68,6 @@ export function logError(message: string): void {
   log(message, {
     prefix: '❌',
     color: '#ef4444',
-    emoji: 'ERROR',
-  });
+    emoji: 'ERROR'
+  })
 }
-

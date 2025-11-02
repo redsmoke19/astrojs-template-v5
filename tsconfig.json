@@ -5,9 +5,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@images/*": ["./src/shared/assets/images/*"],
+      "@icons/*": ["./src/shared/assets/icons/*"],
+      "@uikit/*": ["./src/shared/uikit/*"]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "types": ["@types/node", "@tailwindcss/vite/dist"]
   }
 }
