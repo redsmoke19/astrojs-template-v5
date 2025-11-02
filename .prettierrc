@@ -3,5 +3,6 @@
   "semi": false,
   "singleQuote": true,
   "endOfLine": "auto",
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "plugins": ["prettier-plugin-astro"]
 }
